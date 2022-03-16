@@ -252,7 +252,8 @@ class ActivityLogService
         $updated_at = gmdate('Y-m-d G:i:s', $this->serverTimeString);
 
         $user_id = app('loginUser')->getUser()->id;
-        $session_token_id = $this->sessionToken->getSessionToken();
+        // $session_token_id = $this->sessionToken->getSessionToken();
+        $session_token_id = 1;
         $data['user_id'] = $user_id;
         $data['session_token_id'] = $session_token_id;
         $data = [

@@ -48,7 +48,8 @@ class AttendanceLogService
             $attendance_status_date = gmdate('Y-m-d G:i:s', $this->serverTimeString);
         }
         $user_id = app('loginUser')->getUser()->id;
-        $session_token_id = $this->sessionToken->getSessionToken();
+        // $session_token_id = $this->sessionToken->getSessionToken();
+        $session_token_id = 1;
         $created_at = gmdate('Y-m-d G:i:s', $this->serverTimeString);
         $updated_at = gmdate('Y-m-d G:i:s', $this->serverTimeString);
         $data['attendance_date'] = $attendance_date;
