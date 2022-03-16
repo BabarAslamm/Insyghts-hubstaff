@@ -29,8 +29,8 @@ class ActivityLog extends Model
             $to = $filters['to'];
         } else {
             // Current date data
-             $from = gmdate('Y-m-d 01:00:00');
-            $to = gmdate('Y-m-d 23:59:59');
+            $from = gmdate('Y-m-19 01:00:00');
+            $to = gmdate('Y-m-19 23:59:59');
             // $from = gmdate('Y-m-02 01:00:00');
             // $to = gmdate('Y-m-02 23:59:59');
         }
@@ -60,8 +60,8 @@ class ActivityLog extends Model
 
         $actLogs = $actLogsQuery->paginate($limit)->toArray();
         $actLogs = $this->appendBucketUrl($actLogs);
-        $minDate = ActivityLog::whereBetween('activity_date', [$from, $to])->min('activity_date');
-        $maxDate = ActivityLog::whereBetween('activity_date', [$from, $to])->max('activity_date');
+        $minDate = ActivityLog::whereBetween('log_from_date', [$from, $to])->min('log_from_date');
+        $maxDate = ActivityLog::whereBetween('log_to_date', [$from, $to])->max('log_to_date');
 
         return ['activityLogs' => $actLogs, 'minDate' => $minDate, 'maxDate' => $maxDate];
     }

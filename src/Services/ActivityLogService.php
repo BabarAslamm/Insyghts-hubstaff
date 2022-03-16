@@ -265,8 +265,8 @@ class ActivityLogService
             'log_from_date' => $data['log_from_date'],
             'log_to_date' => $data['log_to_date'],
             'note'  =>  $data['note'],
-            'keyboard_track' => $data['keyboard_track'],
-            'mouse_track'   => $data['mouse_track'],
+            'keyboard_track' => isset($data['keyboard_track']) ? $data['keyboard_track'] : NULL,
+            'mouse_track'   => isset($data['mouse_track']) ? $data['mouse_track'] : NULL,
             'time_type' => $data['time_type'],
             'created_by' => app('loginUser')->getUser()->id,
             'last_modified_by' => app('loginUser')->getUser()->id,
@@ -282,10 +282,10 @@ class ActivityLogService
                 $response['data']  = $activityLog;
             }
         } catch (Exception $e) {
-            $show = get_class($e) == 'Illuminate\Database\QueryException' ? false : true;
-            if ($show) {
+            // $show = get_class($e) == 'Illuminate\Database\QueryException' ? false : true;
+            // if ($show) {
                 $response['data'] = $e->getMessage();
-            }
+            // }
         } finally {
             return $response;
         }

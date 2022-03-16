@@ -23,4 +23,9 @@ class HubstaffServerService
 
         return $response;
     }
+
+    public function generateDummyData()
+    {
+                
+    }
 }

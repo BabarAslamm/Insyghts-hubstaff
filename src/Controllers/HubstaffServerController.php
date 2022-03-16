@@ -24,4 +24,10 @@ class HubstaffServerController extends Controller
         // echo '<pre>'; print_r(gmdate('Y-m-d G:i:s', $tme)); exit;
         return response()->json($timeString);
     }
+
+    public function generateDummyData()
+    {
+        $result = $this->serverService->generateDummyData();
+        
+    }
 }
