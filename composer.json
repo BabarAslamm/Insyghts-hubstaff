@@ -16,7 +16,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "insyghts/authentication": "~1.0",
-        "insyghts/common": "~1.0"
+        "insyghts/authentication": "1.0",
+        "insyghts/common": "1.0"
     }
 }
