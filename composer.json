@@ -2,7 +2,6 @@
     "name": "insyghts/hubstaff",
     "description": "Graymatrix Product",
     "license": "proprietary",
-    "version":"1.0",
     "autoload": {
         "psr-4": {
             "Insyghts\\Hubstaff\\": "src/"
@@ -16,7 +15,7 @@
     ],
     "minimum-stability": "dev",
     "require": {
-        "insyghts/authentication": "1.0",
-        "insyghts/common": "1.0"
+        "insyghts/authentication": "dev-main",
+        "insyghts/common": "dev-main"
     }
 }
